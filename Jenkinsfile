@@ -12,7 +12,7 @@ pipeline {
     environment{
         BUILD_SERVER='ec2-user@172.31.14.107'
         IMAGE_NAME='santhoshmula/devopstrainer-myrepo:$BUILD_NUMBER'
-        DEPLOY_SERVER='ec2-user@172.31.5.162'
+        DEPLOY_SERVER='ec2-user@172.31.5.27'
     }
     stages {
         stage('Compile') {
