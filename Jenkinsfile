@@ -10,8 +10,8 @@ pipeline {
         choice(name:'APPVERSION',choices:['1.1','1.2','1.3'])
     }
     environment{
-        BUILD_SERVER='ec2-user@172.31.0.99'
-        IMAGE_NAME='devopstrainer/java-mvn-privaterepos:$BUILD_NUMBER'
+        BUILD_SERVER='ec2-user@172.31.14.107'
+        IMAGE_NAME='santhoshmula/devopstrainer-myrepo:$BUILD_NUMBER'
         DEPLOY_SERVER='ec2-user@172.31.5.162'
     }
     stages {
