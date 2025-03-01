@@ -10,16 +10,16 @@ pipeline {
         choice(name:'APPVERSION',choices:['1.1','1.2','1.3'])
     }
     environment{
-        BUILD_SERVER='ec2-user@172.31.14.107'
+        BUILD_SERVER='ec2-user@'
         IMAGE_NAME='santhoshmula/devopstrainer-myrepo:$BUILD_NUMBER'
-        DEPLOY_SERVER='ec2-user@172.31.5.27'
+        DEPLOY_SERVER='ec2-user@'
     }
     stages {
         stage('Compile') {
             agent any
             steps {
                 script{
-                echo "Compiling the code in ${params.Env}"
+                echo "Compilinng the code in ${params.Env}"
                 sh "mvn compile"
             }
             }
@@ -28,7 +28,7 @@ pipeline {
             agent any
             steps {               
                 script{
-                 echo 'Reviewing the code with pmd'
+                 echo 'yes Reviewing the code with pmd '
                 sh "mvn pmd:pmd"
             }
             }
