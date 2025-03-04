@@ -16,7 +16,7 @@ else
   git clone https://github.com/Santhoshmula/addressbook-v2.git
 fi
 
-cd /home/ec2-user/addressbook-v1
+cd /home/ec2-user/addressbook-v2
 git checkout demo2
 
 #mvn package
