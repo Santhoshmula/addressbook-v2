@@ -7,13 +7,13 @@ sudo systemctl start docker
 # sudo yum install maven -y
 
 
-if [ -d "addressbook-v1" ]
+if [ -d "addressbook-v2" ]
 then
   echo "repo is cloned and exists"
-  cd /home/ec2-user/addressbook-v1
+  cd /home/ec2-user/addressbook-v2
   git pull origin demo2
 else
-  git clone https://github.com/preethid/addressbook-v1.git
+  git clone https://github.com/Santhoshmula/addressbook-v2.git
 fi
 
 cd /home/ec2-user/addressbook-v1
