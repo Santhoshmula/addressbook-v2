@@ -10,9 +10,9 @@ pipeline {
         choice(name:'APPVERSION',choices:['1.1','1.2','1.3'])
     }
     environment{
-        BUILD_SERVER='ec2-user@'
+        BUILD_SERVER='ec2-user@172.31.14.107'
         IMAGE_NAME='santhoshmula/devopstrainer-myrepo:$BUILD_NUMBER'
-        DEPLOY_SERVER='ec2-user@'
+        DEPLOY_SERVER='ec2-user@172.31.5.27'
     }
     stages {
         stage('Compile') {
@@ -66,7 +66,7 @@ pipeline {
             agent any
             steps {
                script{
-                sshagent(['slave2']) {
+                sshagent(['slave1']) {
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
                 echo "Packaging the code ${params.APPVERSION}"
                 sh "scp -o StrictHostKeyChecking=no server-script.sh ${BUILD_SERVER}:/home/ec2-user"
